@@ -1,0 +1,18 @@
+<h2><%= @article.name %></h2>
+
+<section class="article_info">
+    <div class="url">URL: <%= @article.url %></div>
+
+    <div class="category">カテゴリ: <% @article.categories.each do |category| %>
+                    <%= category.name %>
+                <% end %>
+    </div>
+
+    <div class="dateinfo">作成日: <%= @article.created_at %> 更新日: <%= @article.updated_at %></div>
+</section>
+
+<div>
+    <%= link_to "スクラップ一覧に戻る", articles_path %>
+    <%= link_to "このスクラップを編集", edit_article_path(@article) %>
+    <%= button_to "このスクラップを削除", {controller: "articles", action: "destroy", id: @article.id}, method: :delete %>
+</div>
