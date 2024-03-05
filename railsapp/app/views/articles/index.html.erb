@@ -1,7 +1,14 @@
-<h1 class="">記事一覧</h1>
+<h1>スクラップ一覧</h1>
 
-<div class="articles">
-    <table>
+<div class="articles container mt-3">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">スクラップ名</th>
+                <th scope="col">URL</th>
+                <th scope="col">カテゴリ</th>
+            </tr>
+        </thead>
         <% @articles.each do |article| %>
             <tr>
                 <td>
@@ -18,4 +25,8 @@
             </tr>
         <% end %>
     </table>
+
+    <div class="row justify-content-center mt-4">
+        <%= link_to "スクラップの新規作成", new_article_path, class: "btn btn-outline-primary col-6" %>
+    </div>
 </div>
