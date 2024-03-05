@@ -2,14 +2,26 @@
 
 <div class="container">
     <section class="article_info my-2">
-        <div class="url my-2">URL: <%= @article.url %></div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col" class="col-5">URL</th>
+                    <th scope="col" class="col-3">カテゴリ</th>
+                    <th scope="col" class="col-2">作成日</th>
+                    <th scope="col" class="col-2">更新日</th>
+                </tr>
+            </thead>
+            <tr>
+                <td id="URL"><%= @article.url %></td>
 
-        <div class="category my-2">カテゴリ: <% @article.categories.each do |category| %>
-                        <%= category.name %>
-                    <% end %>
-        </div>
-
-        <div class="dateinfo">作成日: <%= @article.created_at %> 更新日: <%= @article.updated_at %></div>
+                <td id="category"><% @article.categories.each do |category| %>
+                                  <%= category.name %>
+                                  <% end %>
+                </td>
+                <td id="created_at"><%= @article.created_at %></td>
+                <td id="updated_at"><%= @article.updated_at %></td>
+            </tr>
+        </table>
     </section>
 
     <div class="row justify-content-center mt-4">

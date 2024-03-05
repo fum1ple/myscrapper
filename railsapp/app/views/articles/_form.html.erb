@@ -1,20 +1,27 @@
 <%= form_with model: @article, data: { turbo: false } do |form| %>
-    <div>
-        <%= form.label :name, "ウェブサイト名", style: "display: block"%>
-        <%= form.text_field :name%>
-    </div>
 
-    <div>
-        <%= form.label :url, "URL", style: "display: block" %>
-        <%= form.text_field :url%>
-    </div>
+    <div class="container">
+        <div class="row my-4">
+            <div class="col">
+                <%= form.label :name, "ウェブサイト名"%>
+                <%= form.text_field :name, class: "form-control"%>
+            </div>
 
-    <div>
-        <%= form.label :category_ids, "カテゴリ", style: "display: block" %>
-        <%= form.collection_check_boxes :category_ids, Category.all, :id, :name %>
-    </div>
+            <div class="col">
+                <%= form.label :url, "URL" %>
+                <%= form.text_field :url, class: "form-control"%>
+            </div>
+        </div>
 
-    <div>
-        <%= form.submit %>
+        <div class="row my-4">
+            <div class="col">
+                <%= form.label :category_ids, "カテゴリ" %>
+                <%= form.collection_check_boxes :category_ids, Category.all, :id, :name, class: "form-check-inline" %>
+            </div>
+        </div>
+
+        <div>
+            <%= form.submit %>
+        </div>
     </div>
 <% end %>
