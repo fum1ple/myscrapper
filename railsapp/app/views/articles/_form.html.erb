@@ -16,12 +16,17 @@
         <div class="row my-4">
             <div class="col">
                 <%= form.label :category_ids, "カテゴリ" %>
-                <%= form.collection_check_boxes :category_ids, Category.all, :id, :name, class: "form-check-inline" %>
+                <%= form.collection_check_boxes :category_ids, Category.all, :id, :name do |b| %>
+                    <div class="category">
+                        <%= b.check_box %>
+                        <%= b.label %>
+                    </div>
+                <% end %>
             </div>
         </div>
 
         <div>
-            <%= form.submit %>
+            <%= form.submit submit_button_label || "送信", class: "btn btn-outline-primary" %>
         </div>
     </div>
 <% end %>

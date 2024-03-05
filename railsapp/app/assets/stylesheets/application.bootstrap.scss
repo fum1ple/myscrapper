@@ -6,6 +6,13 @@ h1 {
     margin-bottom: 20px
 }
 
-// .container {
-//     margin-top: 16px;
-// }
+.category {
+    display: inline;
+    margin-right: 10px;
+}
+
+.category:first-child {
+    display: inline;
+    margin-left: 10px;
+    margin-right: 10px;
+}
