@@ -1,0 +1,10 @@
+<%= form_with model: @category, data: {turbo: false} do |form| %>
+    <div>
+        <%= form.label :name, "カテゴリ名", style: "display: block" %>
+        <%= form.text_field :name %>
+    </div>
+
+    <div>
+        <%= form.submit "完了" %>
+    </div>
+<% end %>
