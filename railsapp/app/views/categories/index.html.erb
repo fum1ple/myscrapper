@@ -1,10 +1,22 @@
 <h1>カテゴリ一覧</h1>
 
-<table>
-    <% @categories.each do |category| %>
-        <tr>
-            <td><%= link_to category.name, edit_category_path(category) %></td>
-            <td><%= category.created_at.to_s %></td>
-        </tr>
-    <% end %>
-</table>
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">カテゴリ名</th>
+                <th scope="col">追加日時</th>
+            </tr>
+        </thead>
+        <% @categories.each do |category| %>
+            <tr>
+                <td><%= link_to category.name, edit_category_path(category) %></td>
+                <td><%= category.created_at.to_s %></td>
+            </tr>
+        <% end %>
+    </table>
+
+    <div class="row justify-content-center">
+        <%= link_to "カテゴリを新規作成", new_category_path, class: "col-3 btn btn-primary my-3" %>
+    </div>
+</div>
